@@ -6,13 +6,11 @@ CFLAGS = -c -Wall
 SOURCES = main.c custom_module/some_test.c
 OBJECTS = $(SOURCES:.c=.o)
 
+
 all: $(SOURCES) $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
-
-.c.o:
-	$(CC) $(CFLAGS)  -c $< -o $@
 
 clean:
 	rm -rf $(OBJECTS) $(TARGET)
