@@ -3,16 +3,16 @@ TARGET = quadratic-equation
 CC = gcc
 CFLAGS = -c -Wall
 
-all: $(TARGET)
+SOURCES = main.c custom_module/some_test.c
+OBJECTS = $(SOURCES:.c=.o)
 
-$(TARGET): main.o some_test.o
-	$(CC) main.o some_test.o -o $(TARGET)
+all: $(SOURCES) $(TARGET)
 
-main.o: main.c
-	$(CC) $(CFLAGS) main.c
+$(TARGET): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-some_test.o:
-	$(CC) $(CFLAGS) custom_module/some_test.c
+.c.o:
+	$(CC) $(CFLAGS)  -c $< -o $@
 
 clean:
-	rm -rf *.o $(TARGET)
+	rm -rf $(OBJECTS) $(TARGET)
