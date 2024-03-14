@@ -1,21 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "../../common/alloc.h"
 #include "quadratic_equation.h"
 
 
 
 QuadraticEquation* make_quadratic_equation(double a, double b, double c)
 {
-    QuadraticEquation* equation = (QuadraticEquation*)malloc(sizeof(QuadraticEquation));
+    QuadraticEquation* equation = (QuadraticEquation*)allocate(sizeof(QuadraticEquation));
     equation->eq.solve_equation = solve_quadratic_equation;
 
     equation->a = a;
     equation->b = b;
     equation->c = c;
-    if(equation == NULL)
-    {
-        printf("Can't allocate memory");
-    }
     return equation;
 }
 

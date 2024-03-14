@@ -3,7 +3,7 @@ TARGET = quadratic-equation
 CC = gcc
 CFLAGS = -c -Wall
 
-SOURCES = src/main.c src/equations/quadratic/quadratic_equation.c src/equations/linear/linear_equation.c
+SOURCES = src/main.c src/common/alloc.c src/equations/quadratic/quadratic_equation.c src/equations/linear/linear_equation.c
 OBJECTS = $(SOURCES:.c=.o)
 
 
