@@ -11,7 +11,8 @@ LinearEquation* make_linear_equation(double a, double b)
 }
 
 
-double solve_linear_equation(const LinearEquation* equation)
+double solve_linear_equation(const void* equation)
 {
-    return (-1)*(equation->b/equation->a);
+    LinearEquation* le = (LinearEquation*)equation;
+    return (-1)*(le->b/le->a);
 }

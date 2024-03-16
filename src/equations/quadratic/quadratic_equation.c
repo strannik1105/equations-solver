@@ -19,7 +19,7 @@ void delete_quadratic_equation(QuadraticEquation* equation)
     free(equation);
 }
 
-double solve_quadratic_equation(const QuadraticEquation* equation)
+double solve_quadratic_equation(const void* equation)
 {
     return 1.0 + 2.0;
 }

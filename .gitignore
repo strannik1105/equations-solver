@@ -52,5 +52,6 @@ Mkfile.old
 dkms.conf
 
 .idea
+.vscode
 
 settings.json

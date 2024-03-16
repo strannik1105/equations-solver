@@ -16,7 +16,7 @@ LinearEquation* make_linear_equation(double a, double b);
 
 // void delete_quadratic_equation(QuadraticEquation* equation);
 
-double solve_linear_equation(const LinearEquation* equation);
+double solve_linear_equation(const void* equation);
 
 
 #endif
