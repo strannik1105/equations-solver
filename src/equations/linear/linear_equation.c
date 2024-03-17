@@ -1,5 +1,7 @@
 #include "../../common/alloc.h"
+#include "../equation.h"
 #include "linear_equation.h"
+
 
 LinearEquation* make_linear_equation(double a, double b)
 {
@@ -11,8 +13,12 @@ LinearEquation* make_linear_equation(double a, double b)
 }
 
 
-double solve_linear_equation(const void* equation)
+List* solve_linear_equation(const void* equation)
 {
+    List* equation_solution = make_list();
     LinearEquation* le = (LinearEquation*)equation;
-    return (-1)*(le->b/le->a);
+    double* result = (double*)allocate(sizeof(double));
+    *result = (-1)*(le->b/le->a);
+    append(equation_solution, result);
+    return equation_solution;
 }

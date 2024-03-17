@@ -1,15 +1,18 @@
 #ifndef EQUATION_EQUATION_H
 #define EQUATION_EQUATION_H
+#include "../common/list.h"
 
-typedef struct {
-    double (* solve_equation)(const void* self);
+typedef struct 
+{
+    List* (* solve_equation)(const void* self);
 } Equation;
 
 
 #define impl_eq(T)                                                                                     \
-    static double solve_equation(T equation)                                                                                                 \
+    List* solve_equation(T equation)                                                                                                 \
     {                                                                                                                  \
         return equation->eq.solve_equation(equation);                                                                    \
     }
+
 
 #endif
