@@ -32,9 +32,9 @@ int main(int argc, char *argv[])
         {
             return -1;
         }
-        int a = strtol(argv[2], NULL, 10);
-        int b = strtol(argv[3], NULL, 10);
-        int c = strtol(argv[4], NULL, 10);
+        double a = strtof(argv[2], NULL);
+        double b = strtof(argv[3], NULL);
+        double c = strtof(argv[4], NULL);
         equation = (void*)make_quadratic_equation(a, b, c);
     }
     else if(strcmp(eq_type,"-l") == 0)
@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
         {
             return -1;
         }
-        int a = strtol(argv[2], NULL, 10);
-        int b = strtol(argv[3], NULL, 10);
+        double a = strtof(argv[2], NULL);
+        double b = strtof(argv[3], NULL);
         equation = (void*)make_linear_equation(a, b);
     }
     else
