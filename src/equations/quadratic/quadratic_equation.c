@@ -7,7 +7,7 @@
 QuadraticEquation* make_quadratic_equation(double a, double b, double c)
 {
     QuadraticEquation* equation = (QuadraticEquation*)allocate(sizeof(QuadraticEquation));
-    equation->eq.solve_equation = solve_quadratic_equation;
+    equation->eq.solve = solve_quadratic_equation;
 
     equation->a = a;
     equation->b = b;

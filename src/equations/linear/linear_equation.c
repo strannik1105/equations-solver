@@ -6,12 +6,16 @@
 LinearEquation* make_linear_equation(double a, double b)
 {
     LinearEquation* eq = (LinearEquation*)allocate(sizeof(LinearEquation));
-    eq->eq.solve_equation = solve_linear_equation;
+    eq->eq.solve = solve_linear_equation;
     eq->a = a;
     eq->b = b;
     return eq;
 }
 
+void delete_linear_equation(LinearEquation* equation)
+{
+    free(equation);
+}
 
 List* solve_linear_equation(const void* equation)
 {

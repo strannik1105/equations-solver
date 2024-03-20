@@ -5,6 +5,11 @@
 #include "../../common/list.h"
 
 
+/*
+
+*/
+
+
 typedef struct {
     Equation eq;
     
@@ -14,8 +19,7 @@ typedef struct {
 
 LinearEquation* make_linear_equation(double a, double b);
 
-
-// void delete_quadratic_equation(QuadraticEquation* equation);
+void delete_linear_equation(LinearEquation* equation);
 
 List* solve_linear_equation(const void* equation);
 

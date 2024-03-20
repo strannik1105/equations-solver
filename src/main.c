@@ -8,7 +8,7 @@
 int main()
 {
     QuadraticEquation* quadratic_equation = make_quadratic_equation(1, 4, -12);
-    List* solution = quadratic_equation->eq.solve_equation(quadratic_equation);
+    List* solution = solve_equation(quadratic_equation);
     Node* cursor = solution->root;
     printf("solutions\n");
     while(cursor != NULL)
@@ -17,5 +17,6 @@ int main()
         cursor = cursor->next;
     }
     delete_list(solution);
+    delete_quadratic_equation(quadratic_equation);
     return 0;
 }

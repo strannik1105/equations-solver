@@ -14,7 +14,6 @@ typedef struct {
 
 QuadraticEquation* make_quadratic_equation(double a, double b, double c);
 
-
 void delete_quadratic_equation(QuadraticEquation* equation);
 
 List* solve_quadratic_equation(const void* equation);

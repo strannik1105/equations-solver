@@ -4,15 +4,10 @@
 
 typedef struct 
 {
-    List* (* solve_equation)(const void* self);
+    List* (* solve)(const void* self);
 } Equation;
 
 
-#define impl_eq(T)                                                                                     \
-    List* solve_equation(T equation)                                                                                                 \
-    {                                                                                                                  \
-        return equation->eq.solve_equation(equation);                                                                    \
-    }
-
+#define solve_equation(equation)  equation->eq.solve(equation);
 
 #endif
