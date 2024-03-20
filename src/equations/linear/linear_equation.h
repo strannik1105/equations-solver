@@ -14,7 +14,7 @@ typedef struct {
 
 LinearEquation* make_linear_equation(double a, double b);
 
-void delete_linear_equation(LinearEquation* equation);
+void delete_linear_equation(void* equation);
 
 List* solve_linear_equation(const void* equation);
 

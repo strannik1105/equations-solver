@@ -8,6 +8,7 @@ QuadraticEquation* make_quadratic_equation(double a, double b, double c)
 {
     QuadraticEquation* equation = (QuadraticEquation*)allocate(sizeof(QuadraticEquation));
     equation->eq.solve = solve_quadratic_equation;
+    equation->eq.delete = delete_quadratic_equation;
 
     equation->a = a;
     equation->b = b;
@@ -15,9 +16,9 @@ QuadraticEquation* make_quadratic_equation(double a, double b, double c)
     return equation;
 }
 
-void delete_quadratic_equation(QuadraticEquation* equation)
+void delete_quadratic_equation(void* equation)
 {
-    free(equation);
+    free((QuadraticEquation*)equation);
 }
 
 static inline double discriminant_sqrt(const QuadraticEquation* equation)

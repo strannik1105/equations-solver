@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     // Let's solve equation
     List* solution = solve_equation(equation);
     Node* cursor = solution->root;
-    
+
     printf("solutions\n");
     while(cursor != NULL)
     {
@@ -63,5 +63,6 @@ int main(int argc, char *argv[])
         cursor = cursor->next;
     }
     delete_list(solution);
+    delete_equation(equation);
     return 0;
 }
