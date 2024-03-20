@@ -5,11 +5,6 @@
 #include "../../common/list.h"
 
 
-/*
-
-*/
-
-
 typedef struct {
     Equation eq;
     
