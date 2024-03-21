@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         return -1;
     }
     const char* eq_type = argv[1];
-    Equation_t* equation;
+    void* equation;
 
     if(strcmp(eq_type,"-h") == 0)
     {
