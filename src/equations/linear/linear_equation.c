@@ -1,5 +1,5 @@
-#include "../../common/alloc.h"
-#include "../equation.h"
+#include "src/common/alloc.h"
+#include "src/equations/equation.h"
 #include "linear_equation.h"
 
 

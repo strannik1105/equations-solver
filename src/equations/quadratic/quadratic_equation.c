@@ -1,6 +1,6 @@
 #include <math.h>
 #include "../../common/alloc.h"
-#include "../../common/list.h"
+#include "src/common/list.h"
 #include "quadratic_equation.h"
 
 
