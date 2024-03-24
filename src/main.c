@@ -17,13 +17,13 @@ int main(int argc, char *argv[])
 
     // Let's solve equation
     List* solution = solve_equation(equation);
-    Node* cursor = solution->root;
-
+    void* cursor = pop(solution);
     printf("solutions\n");
     while(cursor != NULL)
     {
-        printf("%f\n", *(double*)(cursor->data));
-        cursor = cursor->next;
+        printf("%f\n", *(double*)(cursor));
+        free(cursor);
+        cursor = pop(solution);
     }
     delete_list(solution);
     delete_equation(equation);
