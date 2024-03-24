@@ -1,6 +1,6 @@
 #ifndef EQUATION_EQUATION_H
 #define EQUATION_EQUATION_H
-#include "../common/list.h"
+#include "src/common/list.h"
 
 
 /*

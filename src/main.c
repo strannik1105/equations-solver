@@ -1,56 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 #include "equations/equation.h"
 #include "equations/quadratic/quadratic_equation.h"
 #include "equations/linear/linear_equation.h"
 #include "common/list.h"
+#include "common/cmd.h"
 
 
 int main(int argc, char *argv[])
 {
-    if(argc < 2)
-    {
-        return -1;
-    }
-    const char* eq_type = argv[1];
-    void* equation;
-
-    if(strcmp(eq_type,"-h") == 0)
-    {
-        printf("Available params: \n");
-        printf("\t-q: Quadratic equation, requires 3 positional args(a, b, c) \n");
-        printf("\t-l: Quadratic equation, requires 2 positional args(a, b) \n");
-        printf("\n");
-        printf("Ex: ./quadratic-equation -q 1 4 -12\n");
-        return 0;
-    }
-    else if(strcmp(eq_type,"-q") == 0)
-    {
-        if (argc != 5)
-        {
-            return -1;
-        }
-        double a = strtof(argv[2], NULL);
-        double b = strtof(argv[3], NULL);
-        double c = strtof(argv[4], NULL);
-        equation = (void*)make_quadratic_equation(a, b, c);
-    }
-    else if(strcmp(eq_type,"-l") == 0)
-    {
-        if (argc != 4)
-        {
-            return -1;
-        }
-        double a = strtof(argv[2], NULL);
-        double b = strtof(argv[3], NULL);
-        equation = (void*)make_linear_equation(a, b);
-    }
-    else
-    {
-        return -1;
-    }
+    // parse args
+    CMDParseResult* parse_result = parse_cmd(argc, argv);
+    raise_from_result(parse_result);
+    void* equation = parse_result->equation;
 
     // Let's solve equation
     List* solution = solve_equation(equation);
