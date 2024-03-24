@@ -1,6 +1,5 @@
 #ifndef LINEAR_EQUATION_LINEAR_EQUATION_H
 #define LINEAR_EQUATION_LINEAR_EQUATION_H
-#include <complex.h>
 #include "src/equations/equation.h"
 #include "src/common/list.h"
 
@@ -13,10 +12,5 @@ typedef struct {
 } LinearEquation;
 
 LinearEquation* make_linear_equation(double a, double b);
-
-void delete_linear_equation(void* equation);
-
-List* solve_linear_equation(const void* equation);
-
 
 #endif
