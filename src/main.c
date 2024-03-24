@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     // parse args
     CMDParseResult* parse_result = parse_cmd(argc, argv);
     raise_from_result(parse_result);
+
     void* equation = parse_result->equation;
 
     // Let's solve equation
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
             cursor = pop(solution);
         }
     }
+    free(parse_result);
     delete_list(solution);
     delete_equation(equation);
     return 0;
