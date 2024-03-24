@@ -1,4 +1,5 @@
 #include "src/common/alloc.h"
+#include "src/common/utils.h"
 #include "src/equations/equation.h"
 #include "linear_equation.h"
 
@@ -22,6 +23,11 @@ LinearEquation* make_linear_equation(double a, double b)
     LinearEquation* eq = allocate_typed(LinearEquation);
     eq->eq.solve = solve_linear_equation;
     eq->eq.delete = delete_linear_equation;
+
+    if(a == 0)
+    {
+        err_exit("Coefficient a can not be zero");
+    }
 
     eq->a = a;
     eq->b = b;

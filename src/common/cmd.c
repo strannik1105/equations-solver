@@ -4,6 +4,7 @@
 #include "src/common/alloc.h"
 #include "src/equations/quadratic/quadratic_equation.h"
 #include "src/equations/linear/linear_equation.h"
+#include "src/common/utils.h"
 #include "cmd.h"
 
 
@@ -37,9 +38,13 @@ CMDParseResult* parse_cmd(int argc, char *argv[])
     }
     else if(strcmp(eq_type,"-q") == 0)
     {
-        if (argc != 5)
+        if (argc < 5)
         {
             status = TOO_LOW_ARGS;
+        }
+        else if(argc > 5)
+        {
+            status = TOO_MANY_ARGS;
         }
         else
         {
@@ -51,9 +56,13 @@ CMDParseResult* parse_cmd(int argc, char *argv[])
     }
     else if(strcmp(eq_type,"-l") == 0)
     {
-        if (argc != 4)
+        if (argc < 4)
         {
             status = TOO_LOW_ARGS;
+        }
+        else if(argc > 5)
+        {
+            status = TOO_MANY_ARGS;
         }
         else
         {
@@ -80,13 +89,10 @@ void raise_from_result(CMDParseResult* result)
         }
         break;
     case INCORRECT_ARGS:
-        printf("Incorrect args provided\n");
-        exit(1);
+        err_exit("Incorrect args provided");
     case TOO_LOW_ARGS:
-        printf("Too low args provided\n");
-        exit(1);
+        err_exit("Too low args provided");
     case TOO_MANY_ARGS:
-        printf("Too many args provided\n");
-        exit(1);
+        err_exit("Too many args provided");
     }
 }

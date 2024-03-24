@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "equations/equation.h"
 #include "equations/quadratic/quadratic_equation.h"
 #include "equations/linear/linear_equation.h"
@@ -18,12 +17,20 @@ int main(int argc, char *argv[])
     // Let's solve equation
     List* solution = solve_equation(equation);
     void* cursor = pop(solution);
-    printf("solutions\n");
-    while(cursor != NULL)
+
+    if(cursor == NULL)
     {
-        printf("%f\n", *(double*)(cursor));
-        free(cursor);
-        cursor = pop(solution);
+        printf("Equation has no solutions\n");
+    }
+    else
+    {
+        printf("Solutions: \n");
+        while(cursor != NULL)
+        {
+            printf("\t%f\n", *(double*)(cursor));
+            free(cursor);
+            cursor = pop(solution);
+        }
     }
     delete_list(solution);
     delete_equation(equation);
