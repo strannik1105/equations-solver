@@ -7,28 +7,15 @@
 */
 
 
-typedef struct Node
-{
-    struct Node* next;
-    void* data;
-} Node;
-
-Node* make_node(void* data);
-
-void delete_node(Node* node);
-
-typedef struct 
-{
-    Node* root;
-} List;
+typedef struct List List;
 
 
 List* make_list();
 
 void append(List* lst, void* data);
 
-// remove last Node* from lst and returns it
-Node* pop(const List* lst);
+// remove last inserted item from lst and returns it
+void* pop(List* lst);
 
 void delete_list(List* lst);
 
