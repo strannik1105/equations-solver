@@ -4,10 +4,10 @@
 
 enum ParseStatus
 {
-    SUCCESS,
-    TOO_LOW_ARGS,
-    TOO_MANY_ARGS,
-    INCORRECT_ARGS
+    CMD_SUCCESS,
+    CMD_TOO_LOW_ARGS,
+    CMD_TOO_MANY_ARGS,
+    CMD_INCORRECT_ARGS
 };
 
 typedef struct

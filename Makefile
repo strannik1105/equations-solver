@@ -10,6 +10,7 @@ SOURCES = \
 	src/common/alloc.c \
 	src/common/list.c \
 	src/common/cmd.c \
+	src/common/func_result.c \
 	src/common/utils.c \
 	src/equations/quadratic/quadratic_equation.c \
 	src/equations/linear/linear_equation.c
