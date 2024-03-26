@@ -17,12 +17,21 @@ SOURCES = \
 
 OBJECTS = $(SOURCES:.c=.o)
 
+TESTS = test/quadratic_equation
 
 all: $(SOURCES) $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJECTS) -o $@ $(LIBS)
 
+check-clean:
+	rm -rf $(TESTS:=.tst_log)
 
-clean:
+check: all check-clean
+	for test in $(TESTS) ; do \
+        ./$$test.tst_in > $$test.tst_log; 2>&1\
+        diff -q $$test.tst_log $$test.tst_out ; \
+    done
+
+clean: check-clean
 	rm -rf $(OBJECTS) $(TARGET)
