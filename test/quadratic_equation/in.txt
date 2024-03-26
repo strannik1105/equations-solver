@@ -1,0 +1,3 @@
+./quadratic-equation -q 1 4 -12
+./quadratic-equation -q 1 4 12
+./quadratic-equation -q 0 4 12

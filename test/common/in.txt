@@ -1,0 +1,6 @@
+./quadratic-equation -h
+./quadratic-equation -qwrqwqw
+./quadratic-equation -q 1
+./quadratic-equation -l
+./quadratic-equation -q 1 2 3 4 5
+./quadratic-equation -l 1 2 3 4 5

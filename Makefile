@@ -17,7 +17,10 @@ SOURCES = \
 
 OBJECTS = $(SOURCES:.c=.o)
 
-TESTS = test/quadratic_equation
+TESTS = \
+	test/common \
+	test/quadratic_equation \
+	test/linear_equation
 
 all: $(SOURCES) $(TARGET)
 
@@ -25,12 +28,12 @@ $(TARGET): $(OBJECTS)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJECTS) -o $@ $(LIBS)
 
 check-clean:
-	rm -rf $(TESTS:=.tst_log)
+	rm -rf $(TESTS:=/log.txt)
 
 check: all check-clean
 	for test in $(TESTS) ; do \
-        ./$$test.tst_in > $$test.tst_log; 2>&1\
-        diff -q $$test.tst_log $$test.tst_out ; \
+        ./$$test/in.txt > $$test/log.txt; \
+        echo $$(diff -q $$test/log.txt $$test/out.txt); \
     done
 
 clean: check-clean

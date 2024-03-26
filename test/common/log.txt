@@ -1,0 +1,10 @@
+Available params: 
+	-q: Quadratic equation, requires 3 positional args(a, b, c) 
+	-l: Quadratic equation, requires 2 positional args(a, b) 
+
+Ex: ./quadratic-equation -q 1 4 -12
+Incorrect args provided
+Too low args provided
+Too low args provided
+Too many args provided
+Too many args provided

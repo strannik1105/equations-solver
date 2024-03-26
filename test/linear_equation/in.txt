@@ -1,0 +1,3 @@
+./quadratic-equation -l 1 2
+./quadratic-equation -l 3 -5
+./quadratic-equation -l 0 2
