@@ -1,5 +1,0 @@
-Solutions: 
-	-2.000000
-Solutions: 
-	1.666667
-Devide by zero

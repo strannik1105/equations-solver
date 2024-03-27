@@ -54,5 +54,6 @@ dkms.conf
 .idea
 .vscode
 
+log.txt
 settings.json
 quadratic-equation
