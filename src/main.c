@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     void* equation = parse_result->equation;
 
-    // Let's solve equation
+    // solve equation
     FuncResult* solve_result = solve_equation(equation);
     int status = solve_result->status;
     if(status == FUNC_SUCCESS)

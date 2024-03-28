@@ -7,7 +7,7 @@ enum FuncStatusCode
     FUNC_SUCCESS,
     FUNC_FAIL,   // unknow error
     FUNC_DISCRIMINANT_LESS_THAN_ZERO,
-    FUNC_DEVIDE_BY_ZERO
+    FUNC_DIVIDE_BY_ZERO
 };
 
 typedef struct
@@ -16,9 +16,11 @@ typedef struct
     void* result;
 } FuncResult;
 
-
+//constructor
 FuncResult* make_func_result(enum FuncStatusCode status, void* exec_result);
+//destructor
 void delete_func_result(FuncResult* func_result);
+//printing erros if status is not FUNC_SUCCESS
 void print_status_if_err(FuncResult* func_result);
 
 #endif

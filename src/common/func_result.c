@@ -23,11 +23,11 @@ void print_status_if_err(FuncResult* func_result)
     case FUNC_FAIL:
         printf("Unknow error\n");
         break;
-    case FUNC_DEVIDE_BY_ZERO:
-        printf("Devide by zero\n");
+    case FUNC_DIVIDE_BY_ZERO:
+        printf("Divide by zero\n");
         break;
     case FUNC_DISCRIMINANT_LESS_THAN_ZERO:
-        printf("Discriminant less than zero");
+        printf("Discriminant less than zero\n");
         break;
     default:
         break;

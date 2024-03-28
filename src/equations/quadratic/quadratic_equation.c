@@ -5,6 +5,7 @@
 #include "src/common/func_result.h"
 #include "quadratic_equation.h"
 
+
 static void delete_quadratic_equation(void* equation)
 {
     free(equation);
@@ -29,9 +30,9 @@ static FuncResult* solve_quadratic_equation(const void* equation)
     if(eq->a == 0)
     {
         /*
-            Becouse it raise devide by zero exception
+            Becouse it raise divide by zero exception
         */
-        return make_func_result(FUNC_DEVIDE_BY_ZERO, NULL);
+        return make_func_result(FUNC_DIVIDE_BY_ZERO, NULL);
     }
 
     if(discriminant(eq) < 0)

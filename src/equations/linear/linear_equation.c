@@ -4,6 +4,7 @@
 #include "src/equations/equation.h"
 #include "linear_equation.h"
 
+
 static void delete_linear_equation(void* equation)
 {
     free(equation);
@@ -17,9 +18,9 @@ static FuncResult* solve_linear_equation(const void* equation)
     if(le->a == 0)
     {
         /*
-            Becouse it raise devide by zero exception
+            Becouse it raise divide by zero exception
         */
-        return make_func_result(FUNC_DEVIDE_BY_ZERO, NULL);
+        return make_func_result(FUNC_DIVIDE_BY_ZERO, NULL);
     }
 
     double* result = (double*)allocate(sizeof(double));

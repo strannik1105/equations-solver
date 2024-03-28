@@ -1,4 +1,5 @@
 Solutions: 
 	-6.000000
 	2.000000
-Discriminant less than zeroDevide by zero
+Discriminant less than zero
+Divide by zero

@@ -2,6 +2,7 @@
 #include "list.h"
 #include "alloc.h"
 
+
 typedef struct Node
 {
     struct Node* prev;

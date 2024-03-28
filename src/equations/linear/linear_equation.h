@@ -11,6 +11,7 @@ typedef struct {
     double b;
 } LinearEquation;
 
+//constructor
 LinearEquation* make_linear_equation(double a, double b);
 
 #endif

@@ -4,7 +4,7 @@ Available params:
 
 Ex: ./quadratic-equation -q 1 4 -12
 Incorrect args provided
-Too low args provided
-Too low args provided
+Too few args provided
+Too few args provided
 Too many args provided
 Too many args provided

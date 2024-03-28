@@ -8,7 +8,6 @@
 #include "cmd.h"
 
 
-
 CMDParseResult* make_cmd_parse_result(enum ParseStatus status, void* equation)
 {
     CMDParseResult* ptr = allocate_typed(CMDParseResult);
@@ -21,7 +20,7 @@ CMDParseResult* parse_cmd(int argc, char *argv[])
 {
     if(argc < 2)
     {
-        return make_cmd_parse_result(CMD_TOO_LOW_ARGS, NULL);
+        return make_cmd_parse_result(CMD_TOO_FEW_ARGS, NULL);
     }
     const char* eq_type = argv[1];
     enum ParseStatus status = CMD_SUCCESS;
@@ -40,7 +39,7 @@ CMDParseResult* parse_cmd(int argc, char *argv[])
     {
         if (argc < 5)
         {
-            status = CMD_TOO_LOW_ARGS;
+            status = CMD_TOO_FEW_ARGS;
         }
         else if(argc > 5)
         {
@@ -58,7 +57,7 @@ CMDParseResult* parse_cmd(int argc, char *argv[])
     {
         if (argc < 4)
         {
-            status = CMD_TOO_LOW_ARGS;
+            status = CMD_TOO_FEW_ARGS;
         }
         else if(argc > 5)
         {
@@ -90,8 +89,8 @@ void raise_from_result(CMDParseResult* result)
         break;
     case CMD_INCORRECT_ARGS:
         err_exit("Incorrect args provided");
-    case CMD_TOO_LOW_ARGS:
-        err_exit("Too low args provided");
+    case CMD_TOO_FEW_ARGS:
+        err_exit("Too few args provided");
     case CMD_TOO_MANY_ARGS:
         err_exit("Too many args provided");
     }

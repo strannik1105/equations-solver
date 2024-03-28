@@ -11,6 +11,7 @@ typedef struct {
     double c;
 } QuadraticEquation;
 
+//constructor
 QuadraticEquation* make_quadratic_equation(double a, double b, double c);
 
 #endif

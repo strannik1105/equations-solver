@@ -3,6 +3,7 @@
 #include "src/common/list.h"
 #include "src/common/func_result.h"
 
+
 /*
     Interface providing functions peculiar to equations
 */
